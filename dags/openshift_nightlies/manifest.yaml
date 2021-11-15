@@ -1,8 +1,4 @@
 versions:
-- version: 4.9
-  alias: stable
-  releaseStream: 4.9.0-0.nightly
-  baremetalReleaseStream: latest-4.9
 - version: "4.10"
   alias: next
   releaseStream: 4.10.0-0.nightly
@@ -14,7 +10,7 @@ versions:
 
 dagConfig:
   schedules:
-    enabled: true
+    enabled: false
     default: "0 12 * * 1,3,5"
     openstack: "0 12 * * 1-6"
   cleanupOnSuccess: true
@@ -28,135 +24,79 @@ dagConfig:
 
 platforms:
   cloud:
-    versions: [4.9, "4.10", 4.11]
-    providers: ["aws", "gcp", "azure"]
+    versions: ["4.10", 4.11]
+    providers: ["aws"]
     variants: 
-    - name: sdn-control-plane
-      schedule:  "0 12 * * 1,3,5"
+    - name: ovn-20-light
       config: 
-        install: sdn.json
-        benchmarks: control-plane.json
-    - name: ovn-control-plane
-      schedule:  "0 12 * * 1,3,5"
+        install: ovn-20.json
+        benchmarks: 20-node-light.json
+    - name: surya-ovn-20-light
       config: 
-        install: ovn.json
-        benchmarks: control-plane.json
-    - name: sdn-data-plane
-      schedule: "0 12 * * 1"
+        install: surya-ovn-20.json
+        benchmarks: 20-node-light.json
+    - name: ffernandes-ovn-20-light
       config: 
-        install: sdn.json
-        benchmarks: data-plane.json
-    - name: ovn-data-plane
-      schedule: "0 12 * * 1"
+        install: ffernandes-ovn-20.json
+        benchmarks: 20-node-light.json
+    - name: ovn-20-heavy
       config: 
-        install: ovn.json
-        benchmarks: data-plane.json
-    - name: sdn-medium
-      schedule: "0 12 * * 1"
+        install: ovn-20.json
+        benchmarks: 20-node-heavy.json
+    - name: ovn-20-cluster
       config: 
-        install: sdn-medium.json
-        benchmarks: medium-control-plane.json
-    - name: ovn-medium
-      schedule: "0 12 * * 1"
+        install: ovn-20.json
+        benchmarks: 20-cluster.json
+    - name: ovn-120-light
       config: 
-        install: ovn-medium.json
-        benchmarks: medium-control-plane.json
-    - name: sdn-large
-      schedule: "0 12 15 * *"
+        install: ovn-120.json
+        benchmarks: 120-node-light.json
+    - name: ovn-120-light-nightly
       config: 
-        install: sdn-large.json
-        benchmarks: large-control-plane.json
-    - name: ovn-large
-      schedule: "0 12 15 * *"
+        install: ovn-120-nightly.json
+        benchmarks: 120-node-light.json
+    - name: ovn-120-heavy-nightly
       config: 
-        install: ovn-large.json
-        benchmarks: large-control-plane.json
-    - name: acs
+        install: ovn-120-nightly.json
+        benchmarks: 120-node-heavy.json
+    - name: ovn-120-heavy
       config: 
-        install: acs.json
-        benchmarks: acs.json
+        install: ovn-120.json
+        benchmarks: 120-node-heavy.json
+    - name: ovn-120-cluster
+      config: 
+        install: ovn-120.json
+        benchmarks: 120-cluster.json
+    - name: numan-ovn-120-light
+      config:
+        install: ovn-120-nightly.json
+        benchmarks: 120-node-light.json
 
   baremetal: 
     build: dev
-    versions: [4.9]
-    variants: 
-    - name: jetski
-      config: 
-        install: baremetal/jetski.json
-        benchmarks: baremetal-benchmarks
+    versions: []
 
   openstack:
-    versions: [4.9, "4.10"]
-    variants:
-      - name: sdn
-        config:
-          install: openstack/sdn.json
-          benchmarks: openstack.json
-      - name: kuryr
-        config:
-          install: openstack/kuryr.json
-          benchmarks: openstack.json
+    versions: []
 
 # Do not program concurrent builds of ROSA/ROGCP/ARO
   rosa:
-    versions: ["4.10", 4.11]
+    versions: []
     variants:
-      - name: sdn-control-plane
-        schedule:  "0 12 * * 1,3,5"
-        config:
-          install: rosa/sdn.json
-          benchmarks: control-plane.json
-      - name: sdn-data-plane
-        schedule: "5 12 * * 1"
-        config:
-          install: rosa/sdn.json
-          benchmarks: data-plane.json
-      - name: ovn-control-plane
-        schedule:  "10 12 * * 1,3,5"
-        config:
-          install: rosa/ovn.json
-          benchmarks: control-plane.json
-      - name: ovn-data-plane
-        schedule: "15 12 * * 1"
-        config:
-          install: rosa/ovn.json
-          benchmarks: data-plane.json
+
   rogcp:
-    versions: ["4.10", 4.11]
+    versions: []
     variants:
-      - name: sdn-control-plane
-        schedule:  "20 12 * * 1,3,5"
-        config:
-          install: rogcp/sdn.json
-          benchmarks: control-plane.json
-      - name: sdn-data-plane
-        schedule: "25 12 * * 1"
-        config:
-          install: rogcp/sdn.json
-          benchmarks: data-plane.json
 
   hypershift:
-    versions: ["4.10", 4.11]
+    versions: []
     variants:
-      - name: sdn-control-plane
-        schedule:  "0 12 * * 1,3,5"
-        config:
-          install: hypershift/sdn.json
-          benchmarks: hosted-control-plane.json
-      - name: management-control-plane
-        schedule:  "0 12 * * 1,3,5"
-        config:
-          install: hypershift/none_type.json
-          benchmarks: management-control-plane.json
 
   prebuilt:
-    versions: ["4.x"]
+    versions: []
     variants:
-      - name: control-plane
-        config: 
-          install: None
-          benchmarks: control-plane.json
-      - name: data-plane
-        config: 
-          install: None
-          benchmarks: data-plane.json
+    - name: control-plane
+      config: 
+        install: None
+        benchmarks: control-plane.json
+
