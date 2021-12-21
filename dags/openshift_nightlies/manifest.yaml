@@ -31,6 +31,10 @@ platforms:
       config: 
         install: ovn-20.json
         benchmarks: 20-node-light.json
+    - name: surya-ovn-20-light
+      config: 
+        install: surya-ovn-20.json
+        benchmarks: 20-node-light.json
     - name: ovn-20-heavy
       config: 
         install: ovn-20.json
