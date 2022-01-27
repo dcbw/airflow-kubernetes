@@ -66,7 +66,7 @@ platforms:
     - name: numan-ovn-120-light
       config:
         install: ovn-120-nightly.json
-        benchmarks: 120-node-light.json
+        benchmarks: medium-control-plane.json
 
   baremetal: 
     build: dev
