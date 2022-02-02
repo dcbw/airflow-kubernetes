@@ -1,7 +1,7 @@
 {
     "benchmarks": [
         {
-            "name": "node_density_heavy",
+            "name": "node-density-heavy",
             "workload": "kube-burner",
             "command": "./run_nodedensity-heavy_test_fromgit.sh",
             "env": {
