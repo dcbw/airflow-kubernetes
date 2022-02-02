@@ -1,8 +1,4 @@
 versions:
-- version: 4.9
-  alias: next
-  releaseStream: 4.9.0-0.nightly
-  baremetalReleaseStream: latest-4.9
 - version: "4.10"
   alias: future
   releaseStream: 4.10.0-0.nightly
@@ -24,7 +20,7 @@ dagConfig:
 
 platforms:
   cloud:
-    versions: [4.9, "4.10"]
+    versions: ["4.10"]
     providers: ["aws"]
     variants: 
     - name: ovn-20-light
@@ -55,6 +51,10 @@ platforms:
       config: 
         install: ovn-120-nightly.json
         benchmarks: 120-node-light.json
+    - name: ovn-120-heavy-nightly
+      config: 
+        install: ovn-120-nightly.json
+        benchmarks: 120-node-heavy.json
     - name: ovn-120-heavy
       config: 
         install: ovn-120.json
