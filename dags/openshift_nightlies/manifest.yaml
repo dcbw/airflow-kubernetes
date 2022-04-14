@@ -75,6 +75,10 @@ platforms:
       config:
         install: surya-ovn-120.json
         benchmarks: 120-node-light.json
+    - name: surya-ovn-120-heavy
+      config:
+        install: surya-ovn-120.json
+        benchmarks: 120-node-heavy.json
 
   baremetal: 
     build: dev
