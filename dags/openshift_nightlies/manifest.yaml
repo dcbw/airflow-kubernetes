@@ -35,6 +35,18 @@ platforms:
       config:
         install: surya-ovn-20.json
         benchmarks: 20-node-light.json
+    - name: surya-ovn-120-light
+      config:
+        install: surya-ovn-120.json
+        benchmarks: 120-node-light.json
+    - name: surya-ovn-120-heavy
+      config:
+        install: surya-ovn-120.json
+        benchmarks: 120-node-heavy.json
+    - name: surya-ovn-120-cni
+      config:
+        install: surya-ovn-120.json
+        benchmarks: 120-node-cni.json
     - name: ffernandes-ovn-20-light
       config:
         install: ffernandes-ovn-20.json
