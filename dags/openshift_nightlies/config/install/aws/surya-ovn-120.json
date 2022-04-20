@@ -29,5 +29,5 @@
     "openshift_alertmanager_storage_class": "gp2",
     "openshift_alertmanager_storage_size": "20Gi",
     "openshift_toggle_ovn_patch": "true",
-    "openshift_ovn_image": "quay.io/itssurya/dev-images:addLP-airflow-test"
+    "openshift_ovn_image": "quay.io/itssurya/dev-images:airflow-test-120"
 }
