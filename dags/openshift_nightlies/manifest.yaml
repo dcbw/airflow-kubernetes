@@ -107,6 +107,10 @@ platforms:
       config:
         install: numan-ovn-120.json
         benchmarks: 120-node-cni.json
+    - name: jcaamano-ovn-120-light
+      config:
+        install: jcaamano-ovn-120.json
+        benchmarks: 120-node-light.json
 
   baremetal: 
     build: dev
