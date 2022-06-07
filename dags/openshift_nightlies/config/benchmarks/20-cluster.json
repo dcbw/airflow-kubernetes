@@ -16,7 +16,8 @@
                 "PLATFORM_ALERTS": "true",
                 "CLEANUP_WHEN_FINISH": "true",
                 "CLEANUP": "true",
-                "MUST_GATHER_EACH_TASK": "true"
+                "MUST_GATHER_EACH_TASK": "true",
+                "ERROR_ON_VERIFY": "false"
             }
         }
     ]

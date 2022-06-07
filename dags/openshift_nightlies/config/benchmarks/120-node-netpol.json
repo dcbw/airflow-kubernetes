@@ -18,7 +18,8 @@
                 "CLEANUP": "true",
                 "MUST_GATHER_EACH_TASK": "true",
                 "CLEANUP_TIMEOUT": "1h",
-                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }"
+                "NODE_SELECTOR": "{node-role.kubernetes.io/workload: }",
+                "ERROR_ON_VERIFY": "false"
             }
         }
     ]

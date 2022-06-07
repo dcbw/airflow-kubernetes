@@ -17,7 +17,8 @@
                 "CLEANUP_WHEN_FINISH": "true",
                 "CLEANUP": "true",
                 "MUST_GATHER_EACH_TASK": "true",
-                "CLEANUP_TIMEOUT": "1h"
+                "CLEANUP_TIMEOUT": "1h",
+                "ERROR_ON_VERIFY": "false"
             }
         }
     ]
