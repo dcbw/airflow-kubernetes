@@ -1,4 +1,8 @@
 versions:
+- version: 4.8
+  alias: stable
+  releaseStream: 4.8.0-0.nightly
+  baremetalReleaseStream: latest-4.8
 - version: "4.10"
   alias: stable
   releaseStream: 4.10.0-0.nightly
@@ -24,7 +28,7 @@ dagConfig:
 
 platforms:
   cloud:
-    versions: [4.11]
+    versions: [4.8, 4.11]
     providers: ["aws"]
     variants: 
     - name: ovn-20-light
@@ -107,6 +111,10 @@ platforms:
       config:
         install: numan-ovn-120.json
         benchmarks: 120-node-cni.json
+    - name: ovn-120-light-48
+      config:
+        install: ovn-120-48.json
+        benchmarks: 120-node-light.json
 
   baremetal: 
     build: dev
