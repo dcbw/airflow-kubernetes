@@ -32,7 +32,7 @@ class AbstractOpenshiftInstaller(ABC):
 
         self.install_secrets = var_loader.get_secret(
             f"openshift_install_config", deserialize_json=True)
-        self.aws_creds = var_loader.get_secret("aws_creds", deserialize_json=True)
+        self.aws_creds = var_loader.get_secret("ovn_aws_creds", deserialize_json=True)
         self.gcp_creds = var_loader.get_secret("gcp_creds", deserialize_json=True)
         self.azure_creds = var_loader.get_secret("azure_creds", deserialize_json=True)
         self.alibaba_creds = var_loader.get_secret("alibaba_creds", deserialize_json=True)

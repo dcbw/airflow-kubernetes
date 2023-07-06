@@ -69,7 +69,7 @@ class E2EBenchmarks():
 
         if self.release.platform == "rosa":
             self.rosa_creds = var_loader.get_secret("rosa_creds", deserialize_json=True)
-            self.aws_creds = var_loader.get_secret("aws_creds", deserialize_json=True)
+            self.aws_creds = var_loader.get_secret("ovn_aws_creds", deserialize_json=True)
             self.ocm_creds = var_loader.get_secret("ocm_creds", deserialize_json=True)
             self.environment = self.vars["environment"] if "environment" in self.vars else "staging"
             self.env = {

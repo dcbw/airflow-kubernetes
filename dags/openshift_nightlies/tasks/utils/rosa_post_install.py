@@ -24,7 +24,7 @@ class Diagnosis():
         self.config = config
         self.release_name = release.get_release_name(delimiter="-")
 
-        self.aws_creds = var_loader.get_secret("aws_creds", deserialize_json=True)
+        self.aws_creds = var_loader.get_secret("ovn_aws_creds", deserialize_json=True)
 
         # Specific Task Configuration
         self.vars = var_loader.build_task_vars(
