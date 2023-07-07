@@ -4,7 +4,7 @@
     "sshkey_token": "",
     "cluster_owner": "",
     "openshift_client_location": "",
-    "openshift_base_domain": "perfscale.devcluster.openshift.com",
+    "openshift_base_domain": "ovn.devcluster.openshift.com",
     "openshift_cluster_name": "",
     "openshift_install_release_image_override": "",
     "openshift_install_binary_url": "",
