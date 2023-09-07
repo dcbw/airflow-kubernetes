@@ -22,8 +22,11 @@
         },
         {
             "name": "node-density-heavy",
-            "workload": "kube-burner",
-            "custom_cmd": "kube-burner ocp node-density-heavy --uuid=${UUID} --pods-per-node=245 --timeout=3h --es-server=${ES_SERVER} --es-index=ripsaw-kube-burner --user-metadata=metadata.yml"
+            "workload": "kube-burner-ocp-wrapper",
+            "command": "./run.sh",
+            "env": {
+                "WORKLOAD": "node-density-heavy"
+            }
         }
     ]
 }

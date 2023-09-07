@@ -32,6 +32,18 @@ platforms:
     versions: ["4.14"]
     providers: ["aws"]
     variants: 
+    - name: dcbw-enormous-light
+      config:
+        install: dcbw-enormous.json
+        benchmarks: enormous-light.json
+    - name: dcbw-enormous-cni
+      config:
+        install: dcbw-enormous.json
+        benchmarks: enormous-cni.json
+    - name: dcbw-750-cni
+      config:
+        install: dcbw-gigantic.json
+        benchmarks: gigantic-cni.json
     - name: dcbw-small-light
       config:
         install: dcbw-small.json
@@ -40,6 +52,10 @@ platforms:
       config:
         install: dcbw-small.json
         benchmarks: small-cluster.json
+    - name: dcbw-small-cni
+      config:
+        install: dcbw-small.json
+        benchmarks: small-cni.json
     - name: dcbw-medium-light
       config:
         install: dcbw-medium.json
@@ -48,6 +64,10 @@ platforms:
       config:
         install: dcbw-medium.json
         benchmarks: medium-cni.json
+    - name: dcbw-large-cni
+      config:
+        install: dcbw-large.json
+        benchmarks: large-cni.json
     - name: dcbw-medium-cluster
       config:
         install: dcbw-medium.json

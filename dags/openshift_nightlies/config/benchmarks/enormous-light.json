@@ -31,6 +31,16 @@
             }
         },
         {
+           "name": "scale-504",
+           "workload": "scale-perf",
+           "command": "./run_scale_fromgit.sh",
+           "env": {
+               "SCALE": "504",
+               "METADATA_COLLECTION": "false",
+               "WORKLOAD_NODE_ROLE": "worker"
+           }
+       },
+       {
             "name": "node-density",
             "workload": "kube-burner-ocp-wrapper",
             "command": "./run.sh",

@@ -31,12 +31,11 @@
             }
         },
         {
-            "name": "node-density",
+            "name": "node-density-cni",
             "workload": "kube-burner-ocp-wrapper",
             "command": "./run.sh",
             "env": {
-                "WORKLOAD": "node-density",
-                "EXTRA_FLAGS": "--pod-ready-threshold=10s"
+                "WORKLOAD": "node-density-cni"
             }
         }
     ]

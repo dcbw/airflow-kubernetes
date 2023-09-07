@@ -31,12 +31,31 @@
             }
         },
         {
-            "name": "node-density",
+            "name": "scale-500",
+            "workload": "scale-perf",
+            "command": "./run_scale_fromgit.sh",
+            "env": {
+                "SCALE": "500",
+                "METADATA_COLLECTION": "false",
+                "WORKLOAD_NODE_ROLE": "worker"
+            }
+        },
+        {
+            "name": "scale-750",
+            "workload": "scale-perf",
+            "command": "./run_scale_fromgit.sh",
+            "env": {
+                "SCALE": "750",
+                "METADATA_COLLECTION": "false",
+                "WORKLOAD_NODE_ROLE": "worker"
+            }
+        },
+        {
+            "name": "node-density-cni",
             "workload": "kube-burner-ocp-wrapper",
             "command": "./run.sh",
             "env": {
-                "WORKLOAD": "node-density",
-                "EXTRA_FLAGS": "--pod-ready-threshold=10s"
+                "WORKLOAD": "node-density-cni"
             }
         }
     ]
