@@ -19,7 +19,7 @@
     "gopath": "/root/.go",
     "openshift_cidr": "10.128.0.0/10",
     "openshift_machine_cidr": "10.0.0.0/16",
-    "openshift_service_network": "172.30.0.0/16",
+    "openshift_service_network": "172.28.0.0/14",
     "openshift_host_prefix": "22",
     "openshift_network_type": "",
     "openshift_post_install_poll_attempts": "600",
