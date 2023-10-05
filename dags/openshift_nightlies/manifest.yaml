@@ -44,6 +44,10 @@ platforms:
       config:
         install: dcbw-gigantic.json
         benchmarks: gigantic-cni.json
+    - name: dcbw-1000-cni
+      config:
+        install: dcbw-gigantic.json
+        benchmarks: 1000-cni.json
     - name: dcbw-small-light
       config:
         install: dcbw-small.json
