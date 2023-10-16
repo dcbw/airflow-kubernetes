@@ -32,66 +32,58 @@ platforms:
     versions: ["4.14"]
     providers: ["aws"]
     variants: 
-    - name: dcbw-enormous-light
+    - name: dcbw-500-light
       config:
-        install: dcbw-enormous.json
-        benchmarks: enormous-light.json
-    - name: dcbw-enormous-cni
+        install: dcbw-500.json
+        benchmarks: 500-light.json
+    - name: dcbw-500-cni
       config:
-        install: dcbw-enormous.json
-        benchmarks: enormous-cni.json
+        install: dcbw-500.json
+        benchmarks: 500-cni.json
     - name: dcbw-750-cni
       config:
-        install: dcbw-gigantic.json
-        benchmarks: gigantic-cni.json
+        install: dcbw-750-plus.json
+        benchmarks: 750-cni.json
     - name: dcbw-1000-cni
       config:
-        install: dcbw-gigantic.json
+        install: dcbw-750-plus.json
         benchmarks: 1000-cni.json
-    - name: dcbw-small-light
+    - name: dcbw-250-cni
       config:
-        install: dcbw-small.json
-        benchmarks: small-light.json
-    - name: dcbw-small-cluster
-      config:
-        install: dcbw-small.json
-        benchmarks: small-cluster.json
-    - name: dcbw-small-cni
-      config:
-        install: dcbw-small.json
-        benchmarks: small-cni.json
-    - name: dcbw-medium-light
-      config:
-        install: dcbw-medium.json
-        benchmarks: medium-light.json
-    - name: dcbw-medium-cni
-      config:
-        install: dcbw-medium.json
-        benchmarks: medium-cni.json
-    - name: dcbw-large-cni
-      config:
-        install: dcbw-large.json
+        install: dcbw-250.json
         benchmarks: large-cni.json
-    - name: dcbw-medium-cluster
+    - name: dcbw-250-light
       config:
-        install: dcbw-medium.json
-        benchmarks: medium-cluster.json
-    - name: dcbw-large-light
-      config:
-        install: dcbw-large.json
+        install: dcbw-250.json
         benchmarks: large-light.json
-    - name: dcbw-large-cluster
+    - name: dcbw-250-cluster
       config:
-        install: dcbw-large.json
+        install: dcbw-250.json
         benchmarks: large-cluster.json
-    - name: numan-medium-light
+    - name: numan-120-light
       config:
-        install: numan-medium.json
+        install: numan-120.json
         benchmarks: medium-light.json
-    - name: numan-medium-cni
+    - name: numan-120-cni
       config:
-        install: numan-medium.json
+        install: numan-120.json
         benchmarks: medium-cni.json
+    - name: numan-250-light
+      config:
+        install: numan-250.json
+        benchmarks: large-light.json
+    - name: numan-250-cni
+      config:
+        install: numan-250.json
+        benchmarks: large-cni.json
+    - name: numan-500-light
+      config:
+        install: numan-500.json
+        benchmarks: 500-light.json
+    - name: numan-500-cni
+      config:
+        install: numan-500.json
+        benchmarks: 500-cni.json
 
   # Do not program concurrent builds of ROSA/ROGCP/ARO
   rosa:
