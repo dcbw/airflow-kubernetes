@@ -4,13 +4,14 @@
             "name": "node-density-cni",
             "workload": "kube-burner-ocp-wrapper",
             "command": "./run.sh",
+            "timeout_seconds": "43200",
             "env": {
                 "WORKLOAD": "node-density-cni",
                 "EXTRA_FLAGS": "--timeout=6h",
-                "US_WEST_2A": "100",
-                "US_WEST_2B": "217",
-                "US_WEST_2C": "217",
-                "US_WEST_2D": "216"
+                "US_WEST_2A": "150",
+                "US_WEST_2B": "200",
+                "US_WEST_2C": "200",
+                "US_WEST_2D": "200"
              }
         }
     ]

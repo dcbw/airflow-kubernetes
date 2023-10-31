@@ -164,6 +164,14 @@ class E2EBenchmarks():
             cmd = f"{constants.root_dag_dir}/scripts/run_benchmark.sh -c '{benchmark['custom_cmd']}'"
         else:
             cmd = f"{constants.root_dag_dir}/scripts/run_benchmark.sh -w {benchmark['workload']} -c {benchmark['command']} "
+
+        timeout_seconds = 21600
+        if 'timeout_seconds' in benchmark:
+            try:
+                timeout_seconds = int(benchmark['timeout_seconds'])
+            except ValueError:
+                pass
+
         task = BashOperator(
                 task_id=f"{task_prefix if self.task_group != 'benchmarks' else ''}{benchmark['name']}",
                 depends_on_past=False,
@@ -173,7 +181,7 @@ class E2EBenchmarks():
                 dag=self.dag,
                 env=env,
                 do_xcom_push=True,
-                execution_timeout=timedelta(seconds=21600),
+                execution_timeout=timedelta(seconds=timeout_seconds),
                 executor_config=self.exec_config
         )
         self._add_indexer(task)
