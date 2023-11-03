@@ -22,6 +22,8 @@
     "openshift_prometheus_retention_period": "15d",
     "openshift_toggle_ovn_patch": "true",
     "openshift_ovn_image": "quay.io/numansidcan/ovn-kubernetes:local",
+    "openshift_toggle_ceo_patch": "true",
+    "openshift_ceo_image": "quay.io/dcbw/cluster-etcd-operator:16gb",
     "openshift_prometheus_storage_class": "gp3-csi",
     "openshift_prometheus_storage_size": "250Gi",
     "openshift_alertmanager_storage_class": "gp3-csi",
