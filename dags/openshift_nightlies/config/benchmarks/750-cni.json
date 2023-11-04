@@ -7,7 +7,7 @@
             "timeout_seconds": "43200",
             "env": {
                 "WORKLOAD": "node-density-cni",
-                "EXTRA_FLAGS": "--timeout=6h",
+                "EXTRA_FLAGS": "--timeout=10h",
                 "US_WEST_2A": "150",
                 "US_WEST_2B": "200",
                 "US_WEST_2C": "200",
