@@ -45,6 +45,7 @@
             "workload": "kube-burner-ocp-wrapper",
             "command": "./run.sh",
             "env": {
+                "EXTRA_FLAGS": "--timeout=10h",
                 "WORKLOAD": "node-density-cni"
             }
         }
