@@ -64,9 +64,10 @@
             "name": "node-density-cni",
             "workload": "kube-burner-ocp-wrapper",
             "command": "./run.sh",
+            "timeout_seconds": "43200",
             "env": {
                 "WORKLOAD": "node-density-cni",
-                "EXTRA_FLAGS": "--timeout=7h"
+                "EXTRA_FLAGS": "--timeout=10h"
             }
         }
     ]
