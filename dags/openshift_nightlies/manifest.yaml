@@ -32,6 +32,10 @@ platforms:
     versions: ["4.14"]
     providers: ["aws"]
     variants: 
+    - name: dcbw-3-cni
+      config:
+        install: ovn-small.json
+        benchmarks: small-cni.json
     - name: dcbw-500-light
       config:
         install: dcbw-500.json
