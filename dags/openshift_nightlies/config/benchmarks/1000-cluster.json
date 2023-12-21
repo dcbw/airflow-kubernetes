@@ -51,12 +51,13 @@
             }
         },
         {
-            "name": "node-density-cni",
+            "name": "cluster-density-v2",
             "workload": "kube-burner-ocp-wrapper",
             "command": "./run.sh",
             "timeout_seconds": "43200",
             "env": {
-                "WORKLOAD": "node-density-cni",
+                "WORKLOAD": "cluster-density-v2",
+                "ITERATIONS": "12000",
                 "EXTRA_FLAGS": "--timeout=10h"
             }
         }

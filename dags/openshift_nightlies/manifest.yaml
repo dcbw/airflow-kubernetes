@@ -52,6 +52,10 @@ platforms:
       config:
         install: dcbw-750-plus.json
         benchmarks: 1000-cni.json
+    - name: dcbw-1000-cluster
+      config:
+        install: dcbw-750-plus.json
+        benchmarks: 1000-cluster.json
     - name: dcbw-250-cni
       config:
         install: dcbw-250.json
